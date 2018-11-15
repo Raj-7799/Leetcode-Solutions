@@ -5,15 +5,18 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
-        sortedNums = sorted(nums)
+        numDict = dict()
 
-        for i in range(len(nums) - 1):
-            found = self.search(sortedNums, target - nums[i], i + 1, len(nums))
-            if found > -1:
-                return [i, found]
+        i = 0
 
-    
+        for num in nums:
+            if (target - num) in numDict:
+                if i != numDict[target - num]:
+                    return sorted([i, numDict[target - num]])
+            numDict[num] = i
+            i += 1
+
 
 if __name__ == "__main__":
     solution = Solution()
-    print(solution.twoSum([3, 2, 4], 6))
+    print(solution.twoSum([3, 3], 6))
