@@ -1,25 +1,13 @@
-class Solution:
+class Solution(object):
     def lengthOfLongestSubstring(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        
-        charList = list(s)
-        count = 0
-        maxCount = 0
-        d = dict()
-        # print(len(charList))
-
-        for c in charList:
-            if c not in d:
-                count += 1
+        last, res, st = {}, 0, 0
+        for i, v in enumerate(string):
+            if v not in last or last[v] < st:
+                res = max(res, i - st + 1)
             else:
-                d = dict()
-                maxCount = count if count > maxCount else maxCount
-                count = 1
-            d[c] = True
-        return max(maxCount, count)
+                st = last[v] + 1
+            last[v] = i
+        return res
 
 
 if __name__ == "__main__":
