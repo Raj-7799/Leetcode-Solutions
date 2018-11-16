@@ -32,3 +32,6 @@ class Solution:
             return finalArr[len(finalArr) // 2 + 1]
 
 
+if __name__ == "__main__":
+    s = Solution()
+    print(s.findMedianSortedArrays([1, 4, 7, 11], [2, 4, 5, 8]))
