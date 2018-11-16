@@ -34,5 +34,5 @@ class Solution:
             current.next = ListNode(ans % 10)
             ans = ans // 10
             current = current.next
-        
+
         return ansNode
