@@ -30,6 +30,9 @@ class Solution:
         ansNode = ListNode(ans % 10)
         current = ansNode
         ans = ans // 10
-        
+        while ans != 0:
+            current.next = ListNode(ans % 10)
+            ans = ans // 10
+            current = current.next
         
         return ansNode
