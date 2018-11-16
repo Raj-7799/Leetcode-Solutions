@@ -11,8 +11,17 @@ class Solution:
         d = dict()
 
         for c in charList:
-            if c not in dict:
+            if c not in d:
                 count += 1
-                d[c] = True
             else:
+                d = dict()
                 
+                maxCount = count if count > maxCount else maxCount
+                count = 0
+            d[c] = True
+        return maxCount
+
+
+if __name__ == "__main__":
+    s = Solution()
+    print(s.lengthOfLongestSubstring("pwwkew"))
