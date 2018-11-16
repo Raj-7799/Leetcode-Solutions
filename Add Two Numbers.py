@@ -15,11 +15,11 @@ class Solution:
         num1 = ""
         num2 = ""
 
-        while l1 != None:
+        while l1:
             num1 += str(l1.val)
             l1 = l1.next
 
-        while l2 != None:
+        while l2:
             num2 += str(l2.val)
             l2 = l2.next
 
