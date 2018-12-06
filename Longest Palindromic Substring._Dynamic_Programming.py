@@ -1,6 +1,3 @@
-import pprint
-
-
 class Solution:
 
     def longestPalindrome(self, s):
