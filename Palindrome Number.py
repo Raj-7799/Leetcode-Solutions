@@ -8,3 +8,7 @@ class Solution:
         x = str(x)
         return x == x[::-1]
         
+
+if __name__ == "__main__":
+    s = Solution()
+    s.isPalindrome(-121)
