@@ -16,9 +16,9 @@ class Solution:
         output = ""
         size = 0
 
-        for i in range(len(charArr) - 1):
+        for i in range(len(charArr)):
             p = ""
-            for i in range(i + 1, len(charArr)):
+            for i in range(i, len(charArr)):
                 p += charArr[i]
                 
                 if self.checkPalindrome(p):
