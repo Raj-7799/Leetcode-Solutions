@@ -6,12 +6,12 @@ class Solution:
         :rtype: bool
         """
 
-        mem = [[False * (len(p) + 1)] * (len(s) + 1)]
+        mem = [[False] * (len(p) + 1) for _ in range(len(s) + 1)]
 
         mem[0][0] = True
 
-        for j in range(2, len(s) + 1):
-            mem[0][j] = mem[0] and p[j - 1] == "*"
+        for j in range(2, len(p) + 1):
+            mem[0][j] = mem[0][j - 2] and p[j - 1] == "*"
 
         for i in range(1, len(s) + 1):
             for j in range(1, len(p) + 1):
