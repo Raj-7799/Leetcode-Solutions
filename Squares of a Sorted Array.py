@@ -2,5 +2,5 @@ class Solution:
     def sortedSquares(self, A: List[int]) -> List[int]:
         for i in range(len(A)):
             A[i] *= A[i]
-        sorted(A)
+        A = sorted(A)
         return A
